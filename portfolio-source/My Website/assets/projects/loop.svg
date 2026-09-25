@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750">
+  <defs>
+    <linearGradient id="bgL" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b0e1a"/>
+      <stop offset="1" stop-color="#141224"/>
+    </linearGradient>
+    <radialGradient id="glowL" cx="50%" cy="50%" r="55%">
+      <stop offset="0" stop-color="#8b6bff" stop-opacity="0.25"/>
+      <stop offset="1" stop-color="#8b6bff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ringL" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4cf3ff"/>
+      <stop offset="1" stop-color="#8b6bff"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="750" fill="url(#bgL)"/>
+  <rect width="1200" height="750" fill="url(#glowL)"/>
+  <!-- phone frame -->
+  <rect x="450" y="120" width="300" height="510" rx="34" fill="#0e1018" stroke="#2a2f42" stroke-width="2"/>
+  <rect x="470" y="150" width="260" height="450" rx="18" fill="#05060a"/>
+  <!-- concentric habit rings -->
+  <g transform="translate(600,340)" fill="none" stroke-linecap="round">
+    <circle r="95" stroke="#1c2033" stroke-width="14"/>
+    <circle r="95" stroke="url(#ringL)" stroke-width="14" stroke-dasharray="597" stroke-dashoffset="120" transform="rotate(-90)"/>
+    <circle r="72" stroke="#1c2033" stroke-width="12"/>
+    <circle r="72" stroke="#ff4fb8" stroke-width="12" stroke-dasharray="452" stroke-dashoffset="260" transform="rotate(-90)" opacity="0.85"/>
+    <circle r="50" stroke="#1c2033" stroke-width="10"/>
+    <circle r="50" stroke="#4cf3ff" stroke-width="10" stroke-dasharray="314" stroke-dashoffset="60" transform="rotate(-90)"/>
+  </g>
+  <text x="600" y="345" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="28" fill="#eef1f8" font-weight="600">12</text>
+  <text x="600" y="368" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#aab1c5">day streak</text>
+  <!-- calendar dots row -->
+  <g transform="translate(500,470)">
+    <circle cx="0" cy="0" r="7" fill="#4cf3ff"/>
+    <circle cx="34" cy="0" r="7" fill="#4cf3ff"/>
+    <circle cx="68" cy="0" r="7" fill="#8b6bff"/>
+    <circle cx="102" cy="0" r="7" fill="#1c2033" stroke="#3a4058"/>
+    <circle cx="136" cy="0" r="7" fill="#4cf3ff"/>
+    <circle cx="170" cy="0" r="7" fill="#ff4fb8"/>
+    <circle cx="204" cy="0" r="7" fill="#1c2033" stroke="#3a4058"/>
+  </g>
+  <text x="60" y="670" font-family="JetBrains Mono, monospace" font-size="15" fill="#8b6bff" opacity="0.85">// habit.sync(mode: "offline-first")</text>
+</svg>

@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750">
+  <defs>
+    <linearGradient id="bgN" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b0e1a"/>
+      <stop offset="1" stop-color="#10182a"/>
+    </linearGradient>
+    <radialGradient id="glowN" cx="65%" cy="35%" r="55%">
+      <stop offset="0" stop-color="#8b6bff" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#8b6bff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="750" fill="url(#bgN)"/>
+  <rect width="1200" height="750" fill="url(#glowN)"/>
+  <!-- document card -->
+  <rect x="330" y="150" width="540" height="450" rx="20" fill="#0e1220" stroke="#2a2f42" stroke-width="1.5"/>
+  <g fill="#aab1c5" opacity="0.55">
+    <rect x="370" y="200" width="220" height="14" rx="7"/>
+    <rect x="370" y="240" width="460" height="10" rx="5" opacity="0.7"/>
+    <rect x="370" y="264" width="460" height="10" rx="5" opacity="0.7"/>
+    <rect x="370" y="288" width="320" height="10" rx="5" opacity="0.7"/>
+  </g>
+  <!-- inline AI suggestion highlight -->
+  <rect x="370" y="330" width="300" height="22" rx="6" fill="#4cf3ff" opacity="0.14"/>
+  <rect x="370" y="330" width="300" height="22" rx="6" fill="none" stroke="#4cf3ff" stroke-opacity="0.6" stroke-dasharray="3 4"/>
+  <g fill="#aab1c5" opacity="0.55">
+    <rect x="370" y="372" width="460" height="10" rx="5"/>
+    <rect x="370" y="396" width="380" height="10" rx="5"/>
+  </g>
+  <!-- blinking cursor -->
+  <rect x="370" y="428" width="2" height="16" fill="#4cf3ff"/>
+  <!-- floating suggestion chip -->
+  <g>
+    <rect x="700" y="322" width="150" height="40" rx="20" fill="#141a2e" stroke="#8b6bff" stroke-width="1.5"/>
+    <text x="722" y="347" font-family="Inter, sans-serif" font-size="13" fill="#eef1f8">tighten tone ✦</text>
+  </g>
+  <!-- sparkle accents -->
+  <g fill="#8b6bff">
+    <path d="M905 200 l6 14 14 6 -14 6 -6 14 -6 -14 -14 -6 14 -6 z"/>
+    <path d="M300 560 l4 10 10 4 -10 4 -4 10 -4 -10 -10 -4 10 -4 z" fill="#4cf3ff"/>
+  </g>
+  <text x="60" y="670" font-family="JetBrains Mono, monospace" font-size="15" fill="#8b6bff" opacity="0.85">// suggestion.stream(mode: "inline")</text>
+</svg>

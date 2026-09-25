@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Alex Rivera — Creative Developer & Technology Enthusiast</title>
+<meta name="description" content="Portfolio of Alex Rivera, a creative developer building interactive 3D web experiences, AI prototypes and robotics projects." />
+<meta name="theme-color" content="#06070a" />
+
+<!-- Open Graph -->
+<meta property="og:title" content="Alex Rivera — Creative Developer" />
+<meta property="og:description" content="Interactive 3D portfolio — web development, AI/ML, robotics and hackathon projects." />
+<meta property="og:type" content="website" />
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>◈</text></svg>" />
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<!-- Styles -->
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ============ LOADING SCREEN ============ -->
+<div id="loader" aria-hidden="true">
+  <canvas id="loader-canvas"></canvas>
+  <div class="loader-content">
+    <div class="loader-initials" id="loader-initials">AR</div>
+    <div class="loader-bar"><span id="loader-bar-fill"></span></div>
+    <div class="loader-pct" id="loader-pct">0%</div>
+  </div>
+</div>
+
+<!-- ============ CUSTOM CURSOR (desktop only) ============ -->
+<div class="cursor-dot" id="cursor-dot"></div>
+<div class="cursor-ring" id="cursor-ring"></div>
+
+<!-- ============ SCROLL PROGRESS ============ -->
+<div class="scroll-progress" id="scroll-progress"></div>
+
+<!-- ============ NAVIGATION ============ -->
+<nav id="navbar" class="navbar">
+  <a href="#home" class="nav-logo" id="nav-logo" aria-label="Back to top">◈<span id="nav-logo-name">AR</span></a>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#home" class="nav-link active" data-section="home">Home</a></li>
+    <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+    <li><a href="#skills" class="nav-link" data-section="skills">Skills</a></li>
+    <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
+    <li><a href="#experience" class="nav-link" data-section="experience">Experience</a></li>
+    <li><a href="#services" class="nav-link" data-section="services">Services</a></li>
+    <li><a href="#achievements" class="nav-link" data-section="achievements">Achievements</a></li>
+    <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+  </ul>
+</nav>
+
+<main id="main-content">
+
+  <!-- ============ HERO ============ -->
+  <section id="home" class="hero">
+    <canvas id="hero-canvas" aria-hidden="true"></canvas>
+    <div class="hero-inner container">
+      <p class="hero-eyebrow" id="hero-eyebrow">Hi, I'm <span id="hero-name">Alex Rivera</span></p>
+      <h1 class="hero-title" id="hero-title">Creative Developer <br/> &amp; Technology Enthusiast</h1>
+      <p class="hero-desc" id="hero-desc"></p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary magnetic">View My Work</a>
+        <a href="#" class="btn btn-outline magnetic" id="hero-cv">Download CV</a>
+        <a href="#contact" class="btn btn-ghost magnetic">Contact Me</a>
+      </div>
+    </div>
+    <div class="hero-scroll-hint" aria-hidden="true"><span></span>Scroll</div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section id="about" class="section">
+    <div class="container about-grid">
+      <div class="about-card-wrap">
+        <div class="about-card" id="about-card">
+          <div class="about-card-glow"></div>
+          <div class="about-card-photo" id="about-photo"></div>
+          <div class="about-card-name" id="about-card-name">Alex Rivera</div>
+          <div class="about-card-role" id="about-card-role">Creative Developer</div>
+        </div>
+      </div>
+      <div class="about-copy">
+        <h2 class="section-title">About</h2>
+        <div id="about-bio" class="about-bio"></div>
+        <ul class="about-facts">
+          <li><i class="fa-solid fa-graduation-cap"></i><span id="about-education"></span></li>
+          <li><i class="fa-solid fa-location-dot"></i><span id="about-location"></span></li>
+          <li><i class="fa-solid fa-heart"></i><span id="about-interests"></span></li>
+          <li><i class="fa-solid fa-bullseye"></i><span id="about-goal"></span></li>
+        </ul>
+        <div class="stats-grid" id="stats-grid"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SKILLS ============ -->
+  <section id="skills" class="section section-alt">
+    <div class="container">
+      <h2 class="section-title center">Skills</h2>
+      <p class="section-sub center">A rotating look at what I build with.</p>
+      <div class="skills-tabs" id="skills-tabs"></div>
+      <div class="skills-grid" id="skills-grid"></div>
+    </div>
+  </section>
+
+  <!-- ============ PROJECTS ============ -->
+  <section id="projects" class="section">
+    <div class="container">
+      <h2 class="section-title center">Projects</h2>
+      <p class="section-sub center">A selection of things I've shipped, hacked together, or broken on purpose.</p>
+      <div class="projects-filters" id="projects-filters"></div>
+      <div class="projects-grid" id="projects-grid"></div>
+    </div>
+  </section>
+
+  <!-- ============ FEATURED PROJECT ============ -->
+  <section id="featured" class="section featured-section">
+    <div class="container featured-grid">
+      <div class="featured-copy">
+        <p class="section-sub">Featured build</p>
+        <h2 class="section-title" id="featured-title">Orbit</h2>
+        <p id="featured-desc" class="featured-desc"></p>
+        <div class="featured-tech" id="featured-tech"></div>
+        <a href="#" class="btn btn-primary magnetic" id="featured-link">View Case Study</a>
+      </div>
+      <div class="featured-device">
+        <div class="device-laptop" id="device-laptop">
+          <div class="device-screen"><img id="device-img" alt="" /></div>
+          <div class="device-base"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EXPERIENCE / TIMELINE ============ -->
+  <section id="experience" class="section section-alt">
+    <div class="container">
+      <h2 class="section-title center">Experience &amp; Journey</h2>
+      <p class="section-sub center">Milestones, competitions and things learned the hard way.</p>
+      <div class="timeline" id="timeline"></div>
+    </div>
+  </section>
+
+  <!-- ============ SERVICES ============ -->
+  <section id="services" class="section">
+    <div class="container">
+      <h2 class="section-title center">Services</h2>
+      <p class="section-sub center">What I can help you build.</p>
+      <div class="services-grid" id="services-grid"></div>
+    </div>
+  </section>
+
+  <!-- ============ ACHIEVEMENTS ============ -->
+  <section id="achievements" class="section section-alt">
+    <div class="container">
+      <h2 class="section-title center">Achievements</h2>
+      <p class="section-sub center">Competitions, certifications and other proof of work.</p>
+      <div class="achievements-grid" id="achievements-grid"></div>
+    </div>
+  </section>
+
+  <!-- ============ GITHUB ============ -->
+  <section id="github" class="section">
+    <div class="container">
+      <h2 class="section-title center">Code &amp; Contributions</h2>
+      <p class="section-sub center" id="github-sub">Live stats, pulled straight from GitHub.</p>
+      <div class="github-panel" id="github-panel">
+        <div class="github-loading" id="github-loading">Fetching GitHub stats…</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section id="contact" class="section section-alt contact-section">
+    <canvas id="contact-canvas" aria-hidden="true"></canvas>
+    <div class="container contact-grid">
+      <div>
+        <h2 class="section-title">Let's build something</h2>
+        <p class="section-sub" id="contact-sub">Have a project, a role, or just want to talk shaders? Reach out.</p>
+        <ul class="contact-links" id="contact-links"></ul>
+        <div class="social-icons" id="social-icons"></div>
+      </div>
+      <form id="contact-form" class="contact-form" novalidate>
+        <div class="form-field">
+          <input type="text" id="cf-name" name="name" required minlength="2" />
+          <label for="cf-name">Your name</label>
+          <span class="form-error" data-for="cf-name"></span>
+        </div>
+        <div class="form-field">
+          <input type="email" id="cf-email" name="email" required />
+          <label for="cf-email">Your email</label>
+          <span class="form-error" data-for="cf-email"></span>
+        </div>
+        <div class="form-field">
+          <textarea id="cf-message" name="message" rows="5" required minlength="10"></textarea>
+          <label for="cf-message">Message</label>
+          <span class="form-error" data-for="cf-message"></span>
+        </div>
+        <button type="submit" class="btn btn-primary magnetic" id="cf-submit">
+          <span class="btn-text">Send Message</span>
+          <span class="btn-spinner" aria-hidden="true"></span>
+        </button>
+        <p class="form-status" id="cf-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <a href="#home" class="nav-logo" id="footer-logo">◈</a>
+    <p id="footer-text">Built by Alex Rivera — with Three.js, GSAP and too much coffee.</p>
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+  </div>
+</footer>
+
+<!-- ============ PROJECT MODAL ============ -->
+<div class="modal-overlay" id="project-modal" aria-hidden="true" role="dialog" aria-modal="true">
+  <div class="modal-box">
+    <button class="modal-close" id="modal-close" aria-label="Close project details"><i class="fa-solid fa-xmark"></i></button>
+    <div id="modal-content"></div>
+  </div>
+</div>
+
+<!-- ============ DEV MODE EASTER EGG ============ -->
+<div class="dev-mode" id="dev-mode" aria-hidden="true">
+  <div class="dev-mode-inner">
+    <p>&gt; developer mode activated_</p>
+    <p id="dev-mode-msg"></p>
+  </div>
+</div>
+
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<script src="js/config.js"></script>
+<script src="js/loader.js"></script>
+<script src="js/cursor.js"></script>
+<script src="js/three-scene.js"></script>
+<script src="js/render.js"></script>
+<script src="js/animations.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
